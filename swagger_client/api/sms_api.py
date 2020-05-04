@@ -38,18 +38,18 @@ class SmsApi(object):
 
         Envoi un sms vers un unique destinataire  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms(smsrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.send_sms(smsrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param SmsUniqueRequest smsrequest: sms request (required)
         :return: SMSReponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.send_sms_with_http_info(smsrequest, **kwargs)  # noqa: E501
         else:
             (data) = self.send_sms_with_http_info(smsrequest, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class SmsApi(object):
 
         Envoi un sms vers un unique destinataire  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_with_http_info(smsrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.send_sms_with_http_info(smsrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param SmsUniqueRequest smsrequest: sms request (required)
         :return: SMSReponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class SmsApi(object):
         """
 
         all_params = ['smsrequest']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class SmsApi(object):
             files=local_var_files,
             response_type='SMSReponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class SmsApi(object):
 
         Envoi de SMS vers 1 ou plusieurs destinataires   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_multi(smsrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.send_sms_multi(smsrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param SMSRequest smsrequest: sms request (required)
         :return: SMSReponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.send_sms_multi_with_http_info(smsrequest, **kwargs)  # noqa: E501
         else:
             (data) = self.send_sms_multi_with_http_info(smsrequest, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class SmsApi(object):
 
         Envoi de SMS vers 1 ou plusieurs destinataires   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.send_sms_multi_with_http_info(smsrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.send_sms_multi_with_http_info(smsrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param SMSRequest smsrequest: sms request (required)
         :return: SMSReponse
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class SmsApi(object):
         """
 
         all_params = ['smsrequest']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class SmsApi(object):
             files=local_var_files,
             response_type='SMSReponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -38,18 +38,18 @@ class HlrApi(object):
 
         Réalise un lookup HLR sur les numéros    # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_hlr(hlrrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.get_hlr(hlrrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param HLRrequest hlrrequest:  (required)
         :return: HLRReponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.get_hlr_with_http_info(hlrrequest, **kwargs)  # noqa: E501
         else:
             (data) = self.get_hlr_with_http_info(hlrrequest, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class HlrApi(object):
 
         Réalise un lookup HLR sur les numéros    # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_hlr_with_http_info(hlrrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.get_hlr_with_http_info(hlrrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param HLRrequest hlrrequest:  (required)
         :return: HLRReponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class HlrApi(object):
         """
 
         all_params = ['hlrrequest']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class HlrApi(object):
             files=local_var_files,
             response_type='HLRReponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

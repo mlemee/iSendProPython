@@ -38,11 +38,11 @@ class CampagneApi(object):
 
         Retourne les SMS envoyés sur une période donnée en fonction d'une date de début et d'une date de fin.   Les dates sont au format YYYY-MM-DD hh:mm.   Le fichier rapport de campagne est sous la forme d'un fichier zip + contenant un fichier csv contenant le détail des envois.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_campagne(keyid, rapport_campagne, date_deb, date_fin, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.get_campagne(keyid, rapport_campagne, date_deb, date_fin, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param str keyid: Clé API (required)
         :param str rapport_campagne: Doit valoir \"1\" (required)
         :param str date_deb: date de debut au format YYYY-MM-DD hh:mm (required)
@@ -52,7 +52,7 @@ class CampagneApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.get_campagne_with_http_info(keyid, rapport_campagne, date_deb, date_fin, **kwargs)  # noqa: E501
         else:
             (data) = self.get_campagne_with_http_info(keyid, rapport_campagne, date_deb, date_fin, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class CampagneApi(object):
 
         Retourne les SMS envoyés sur une période donnée en fonction d'une date de début et d'une date de fin.   Les dates sont au format YYYY-MM-DD hh:mm.   Le fichier rapport de campagne est sous la forme d'un fichier zip + contenant un fichier csv contenant le détail des envois.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_campagne_with_http_info(keyid, rapport_campagne, date_deb, date_fin, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.get_campagne_with_http_info(keyid, rapport_campagne, date_deb, date_fin, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param str keyid: Clé API (required)
         :param str rapport_campagne: Doit valoir \"1\" (required)
         :param str date_deb: date de debut au format YYYY-MM-DD hh:mm (required)
@@ -78,7 +78,7 @@ class CampagneApi(object):
         """
 
         all_params = ['keyid', 'rapport_campagne', 'date_deb', 'date_fin']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -150,7 +150,7 @@ class CampagneApi(object):
             files=local_var_files,
             response_type='file',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

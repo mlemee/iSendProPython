@@ -38,11 +38,11 @@ class CreditApi(object):
 
         Retourne le credit existant associe au compte.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_credit(keyid, credit, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.get_credit(keyid, credit, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param str keyid: Clé API (required)
         :param str credit: Type de reponse demandée, 1 pour euro, 2 pour euro + estimation quantité (required)
         :return: CreditResponse
@@ -50,7 +50,7 @@ class CreditApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.get_credit_with_http_info(keyid, credit, **kwargs)  # noqa: E501
         else:
             (data) = self.get_credit_with_http_info(keyid, credit, **kwargs)  # noqa: E501
@@ -61,11 +61,11 @@ class CreditApi(object):
 
         Retourne le credit existant associe au compte.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_credit_with_http_info(keyid, credit, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.get_credit_with_http_info(keyid, credit, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param str keyid: Clé API (required)
         :param str credit: Type de reponse demandée, 1 pour euro, 2 pour euro + estimation quantité (required)
         :return: CreditResponse
@@ -74,7 +74,7 @@ class CreditApi(object):
         """
 
         all_params = ['keyid', 'credit']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +134,7 @@ class CreditApi(object):
             files=local_var_files,
             response_type='CreditResponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

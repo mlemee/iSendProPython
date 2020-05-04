@@ -38,11 +38,11 @@ class DelListeNoireApi(object):
 
         Supprime un numero en liste noire  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.del_liste_noire(keyid, del_liste_noire, num, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.del_liste_noire(keyid, del_liste_noire, num, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param str keyid: Clé API (required)
         :param str del_liste_noire: Doit valoir \"1\" (required)
         :param str num: numéro de mobile à supprimer (required)
@@ -51,7 +51,7 @@ class DelListeNoireApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.del_liste_noire_with_http_info(keyid, del_liste_noire, num, **kwargs)  # noqa: E501
         else:
             (data) = self.del_liste_noire_with_http_info(keyid, del_liste_noire, num, **kwargs)  # noqa: E501
@@ -62,11 +62,11 @@ class DelListeNoireApi(object):
 
         Supprime un numero en liste noire  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.del_liste_noire_with_http_info(keyid, del_liste_noire, num, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.del_liste_noire_with_http_info(keyid, del_liste_noire, num, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param str keyid: Clé API (required)
         :param str del_liste_noire: Doit valoir \"1\" (required)
         :param str num: numéro de mobile à supprimer (required)
@@ -76,7 +76,7 @@ class DelListeNoireApi(object):
         """
 
         all_params = ['keyid', 'del_liste_noire', 'num']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -142,7 +142,7 @@ class DelListeNoireApi(object):
             files=local_var_files,
             response_type='LISTENOIREReponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

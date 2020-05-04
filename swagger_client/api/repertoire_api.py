@@ -38,18 +38,18 @@ class RepertoireApi(object):
 
         Ajoute ou supprime une liste de numéros à un répertoire existant.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.repertoire(repertoiremodifrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.repertoire(repertoiremodifrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param REPERTOIREmodifrequest repertoiremodifrequest: Requête de creation repertoire (required)
         :return: REPERTOIREmodifreponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.repertoire_with_http_info(repertoiremodifrequest, **kwargs)  # noqa: E501
         else:
             (data) = self.repertoire_with_http_info(repertoiremodifrequest, **kwargs)  # noqa: E501
@@ -60,11 +60,11 @@ class RepertoireApi(object):
 
         Ajoute ou supprime une liste de numéros à un répertoire existant.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.repertoire_with_http_info(repertoiremodifrequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.repertoire_with_http_info(repertoiremodifrequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param REPERTOIREmodifrequest repertoiremodifrequest: Requête de creation repertoire (required)
         :return: REPERTOIREmodifreponse
                  If the method is called asynchronously,
@@ -72,7 +72,7 @@ class RepertoireApi(object):
         """
 
         all_params = ['repertoiremodifrequest']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -126,7 +126,7 @@ class RepertoireApi(object):
             files=local_var_files,
             response_type='REPERTOIREmodifreponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -137,18 +137,18 @@ class RepertoireApi(object):
 
         Cree un nouveau répertoire et retourne son identifiant. Cet identifiant pourra être utilisé pour ajouter ou supprimer des numéros via l'API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.repertoire_crea(repertoirecreaterequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.repertoire_crea(repertoirecreaterequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param REPERTOIREcreaterequest repertoirecreaterequest: Creation repertoire (required)
         :return: REPERTOIREcreatereponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_request'):
             return self.repertoire_crea_with_http_info(repertoirecreaterequest, **kwargs)  # noqa: E501
         else:
             (data) = self.repertoire_crea_with_http_info(repertoirecreaterequest, **kwargs)  # noqa: E501
@@ -159,11 +159,11 @@ class RepertoireApi(object):
 
         Cree un nouveau répertoire et retourne son identifiant. Cet identifiant pourra être utilisé pour ajouter ou supprimer des numéros via l'API.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.repertoire_crea_with_http_info(repertoirecreaterequest, async=True)
+        asynchronous HTTP request, please pass async_request=True
+        >>> thread = api.repertoire_crea_with_http_info(repertoirecreaterequest, async_request=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_request bool
         :param REPERTOIREcreaterequest repertoirecreaterequest: Creation repertoire (required)
         :return: REPERTOIREcreatereponse
                  If the method is called asynchronously,
@@ -171,7 +171,7 @@ class RepertoireApi(object):
         """
 
         all_params = ['repertoirecreaterequest']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_request')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -225,7 +225,7 @@ class RepertoireApi(object):
             files=local_var_files,
             response_type='REPERTOIREcreatereponse',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_request=params.get('async_request'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
